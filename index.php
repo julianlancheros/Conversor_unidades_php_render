@@ -90,6 +90,24 @@
                 echo "Tu IP: " . $_SERVER['REMOTE_ADDR'];
                 ?>
             </div>
+                <!--Cambio Nuevo- Reloj-->
+                <div class="info" style="background: #dbeafe;">
+                    🕐 <strong>Reloj en vivo:</strong>
+                    <span id="reloj"></span>
+                </div>
+                
+                <script>
+                function actualizarReloj() {
+                    const ahora = new Date();
+                    const hora = ahora.getHours().toString().padStart(2, '0');
+                    const minutos = ahora.getMinutes().toString().padStart(2, '0');
+                    const segundos = ahora.getSeconds().toString().padStart(2, '0');
+                    document.getElementById('reloj').innerText = `${hora}:${minutos}:${segundos}`;
+                }
+                setInterval(actualizarReloj, 1000);
+                actualizarReloj();
+                </script>
+              <!--Fin Reloj-->
             
             <div class="fecha">
                 <?php
